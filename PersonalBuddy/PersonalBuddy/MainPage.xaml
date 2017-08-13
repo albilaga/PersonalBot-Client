@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalBuddy.MainPage">
+
+  <StackLayout Spacing="10" Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical">
+
+      <ListView x:Name="MessageListView"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="Fill"
+                HasUnevenRows="true"
+                >
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Vertical">
+                <Label VerticalOptions="StartAndExpand" HorizontalOptions="Fill" Text="{Binding Text}"/>
+                <Label VerticalOptions="End" HorizontalOptions="Fill" HorizontalTextAlignment="End" TextColor="Accent" Text="{Binding Sender}"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    
+      <Entry Placeholder="Message"
+           VerticalOptions="End"
+           HorizontalOptions="Fill"
+           HorizontalTextAlignment="End"
+           Completed="Send"
+         />
+
+  </StackLayout>
+
+</ContentPage>
